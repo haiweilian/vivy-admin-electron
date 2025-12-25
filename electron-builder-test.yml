@@ -1,7 +1,7 @@
 extraMetadata:
-  name: vivy-admin-electron
+  name: vivy-admin-electron-test
 appId: com.electron.app
-productName: vivy-admin-electron
+productName: vivy-admin-electron-test
 directories:
   buildResources: build
 files:
@@ -11,11 +11,11 @@ files:
   - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
-asar: true
+asar: false
 asarUnpack:
   - resources/**
 win:
-  executableName: vivy-admin-electron
+  executableName: vivy-admin-electron-test
 nsis:
   oneClick: false
   perMachine: true

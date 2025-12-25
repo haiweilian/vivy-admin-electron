@@ -1,15 +1,19 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
   "include": [
-    "src/renderer/src/env.d.ts",
     "src/renderer/src/**/*",
-    "src/renderer/src/**/*.vue",
-    "src/preload/*.d.ts"
+    "src/renderer/src/global.d.ts",
+    "src/renderer/components.d.ts",
+    "src/preload/**/*",
   ],
   "compilerOptions": {
     "composite": true,
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@preload/*": [
+        "src/preload/*"
+      ],
       "@renderer/*": [
         "src/renderer/src/*"
       ]

@@ -1,4 +1,5 @@
 import { defineConfig } from 'eslint/config'
+import unocss from '@unocss/eslint-plugin'
 import tseslint from '@electron-toolkit/eslint-config-ts'
 import eslintConfigPrettier from '@electron-toolkit/eslint-config-prettier'
 import eslintPluginVue from 'eslint-plugin-vue'
@@ -6,6 +7,7 @@ import vueParser from 'vue-eslint-parser'
 
 export default defineConfig(
   { ignores: ['**/node_modules', '**/dist', '**/out'] },
+  unocss.configs.flat,
   tseslint.configs.recommended,
   eslintPluginVue.configs['flat/recommended'],
   {
@@ -34,6 +36,12 @@ export default defineConfig(
           }
         }
       ]
+    }
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off'
     }
   },
   eslintConfigPrettier
